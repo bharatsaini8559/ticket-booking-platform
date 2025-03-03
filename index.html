@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Event Ticket - Book Event Tickets</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Location Selection Popup -->
+  <div class="location-popup" id="locationPopup">
+    <div class="location-popup-content">
+      <h2>Select Your Location</h2>
+      <div class="popular-cities">
+        <h3>Popular Cities</h3>
+        <div class="city-grid">
+          <div class="city" onclick="selectLocation('New Delhi')">New Delhi</div>
+          <div class="city" onclick="selectLocation('Gurugram')">Gurugram</div>
+          <div class="city" onclick="selectLocation('Mumbai')">Mumbai</div>
+          <div class="city" onclick="selectLocation('Chennai')">Chennai</div>
+          <div class="city" onclick="selectLocation('Bangluru')">Bangluru</div>
+          <div class="city" onclick="selectLocation('Hydrabad')">Hydrabad</div>
+          <div class="city" onclick="selectLocation('Raipur')">Raipur</div>
+          <div class="city" onclick="selectLocation('Ahmedabad')">Ahmedabad</div>
+          <div class="city" onclick="selectLocation('Surat')">Surat</div>
+          <div class="city" onclick="selectLocation('Kolkata')">Kolkata</div>
+          <div class="city" onclick="selectLocation('Pune')">Pune</div>
+          <div class="city" onclick="selectLocation('Jaipur')">Jaipur</div>
+          <div class="city" onclick="selectLocation('Lucknow')">Lucknow</div>
+          <div class="city" onclick="selectLocation('Kanpur')">Kanpur</div>
+          <div class="city" onclick="selectLocation('Bhopal')">Bhopal</div>
+          <div class="city" onclick="selectLocation('Agra')">Agra</div>
+          <div class="city" onclick="selectLocation('ShriNagar')">ShriNagar</div>
+          <div class="city" onclick="selectLocation('Chandigarh')">Chandigarh</div>
+        </div>
+      </div>
+      <div class="search-location">
+        <input type="text" placeholder="Search for your city" id="citySearch">
+        <button onclick="searchLocation()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Book Event Ticket</h1>
+        </a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for events, venues, artists...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#" id="locationBtn">Location <i class="fas fa-map-marker-alt"></i></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <div class="banner-slider">
+        <div class="slide active">
+          <img src="images/honey singh.avif" alt="Music Festival">
+          <div class="slide-content">
+            <h2>Summer Music Festival</h2>
+            <p>Experience the best music festival of the year</p>
+            <a href="event-details.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/comed show.jpeg" alt="Comedy Show">
+          <div class="slide-content">
+            <h2>Comedy Night Special</h2>
+            <p>Laugh out loud with the best comedians in town</p>
+            <a href="event-details.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/tech inovative summity.jpeg" alt="Tech Conference">
+          <div class="slide-content">
+            <h2>Tech Innovation Summit</h2>
+            <p>Join industry leaders for the biggest tech event</p>
+            <a href="event-details.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="slide active">
+          <img src="images/honey ap dhillon.webp" alt="Music Festival">
+          <div class="slide-content">
+            <h2>Summer Music Festival</h2>
+            <p>Experience the best music festival of the year</p>
+            <a href="event-details.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/bashsha.jpeg" alt="Tech Conference">
+          <div class="slide-content">
+            <h2>Tech Innovation Summit</h2>
+            <p>Join industry leaders for the biggest tech event</p>
+            <a href="event-details.html" class="btn-primary">Book Now</a>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+          <span class="dot" data-slide="4"></span>
+          <!-- <span class="dot" data-slide="5"></span> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Filters -->
+    <section class="event-filters">
+      <div class="container">
+        <h2>Find Your Perfect Event</h2>
+        <div class="filter-container">
+          <div class="filter-group">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="all">All Categories</option>
+              <option value="music">Music</option>
+              <option value="comedy">Comedy</option>
+              <option value="theater">Theater</option>
+              <option value="sports">Sports</option>
+              <option value="tech">Technology</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="date">Date</label>
+            <select id="date">
+              <option value="all">Any Date</option>
+              <option value="today">Today</option>
+              <option value="tomorrow">Tomorrow</option>
+              <option value="weekend">This Weekend</option>
+              <option value="week">This Week</option>
+              <option value="month">This Month</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="price">Price Range</label>
+            <select id="price">
+              <option value="all">Any Price</option>
+              <option value="free">Free</option>
+              <option value="low">$0 - $25</option>
+              <option value="medium">$25 - $50</option>
+              <option value="high">$50+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="availability">Availability</label>
+            <select id="availability">
+              <option value="all">All Events</option>
+              <option value="available">Available</option>
+              <option value="selling-fast">Selling Fast</option>
+            </select>
+          </div>
+          <button class="btn-filter">Apply Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Events -->
+    <section class="featured-events">
+      <div class="container">
+        <h2>Featured Events</h2>
+        <div class="event-grid">
+          <div class="event-card">
+            <div class="event-image">
+              <img src="images/honey singh.avif" alt="Music Concert">
+              <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">JUN</span>
+              </div>
+            </div>
+            <div class="event-info">
+              <h3>Summer Music Festival</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i>Jawaharlal Nehru Stadium</p>
+              <p class="event-time"><i class="far fa-clock"></i> 7:00 PM</p>
+              <div class="event-price">
+                <span>From 499</span>
+                <a href="event-details.html" class="btn-secondary">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-image">
+              <img src="images/comed show.jpeg" alt="Comedy Show">
+              <div class="event-date">
+                <span class="day">22</span>
+                <span class="month">JUN</span>
+              </div>
+            </div>
+            <div class="event-info">
+              <h3>Comedy Night Special</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i>Jio Gardens</p>
+              <p class="event-time"><i class="far fa-clock"></i> 8:30 PM</p>
+              <div class="event-price">
+                <span>From 350</span>
+                <a href="event-details.html" class="btn-secondary">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-image">
+              <img src="images/honey ap dhillon.webp" alt="Theater Show">
+              <div class="event-date">
+                <span class="day">29</span>
+                <span class="month">JUN</span>
+              </div>
+            </div>
+            <div class="event-info">
+              <h3>Broadway Musical Night</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i>NSCI Dome</p>
+              <p class="event-time"><i class="far fa-clock"></i> 7:30 PM</p>
+              <div class="event-price">
+                <span>From 750</span>
+                <a href="event-details.html" class="btn-secondary">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-image">
+              <img src="images/tech inovative summity.jpeg" alt="Sports Event">
+              <div class="event-date">
+                <span class="day">05</span>
+                <span class="month">JUL</span>
+              </div>
+            </div>
+            <div class="event-info">
+              <h3>Championship Basketball</h3>
+              <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Pragati Maidan</p>
+              <p class="event-time"><i class="far fa-clock"></i> 6:00 PM</p>
+              <div class="event-price">
+                <span>From 200</span>
+                <a href="event-details.html" class="btn-secondary">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-more">
+          <a href="#" class="btn-primary">View All Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+      <div class="container">
+        <h2>Browse by Category</h2>
+        <div class="categories-grid">
+          <a href="#" class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-music"></i>
+            </div>
+            <h3>Music</h3>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-theater-masks"></i>
+            </div>
+            <h3>Theater</h3>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-laugh"></i>
+            </div>
+            <h3>Comedy</h3>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-futbol"></i>
+            </div>
+            <h3>Sports</h3>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-microchip"></i>
+            </div>
+            <h3>Technology</h3>
+          </a>
+          <a href="#" class="category-card">
+            <div class="category-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Food & Drink</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+          <div class="testimonial-slide active">
+            <div class="testimonial-content">
+              <div class="testimonial-image">
+                <img src="images/Firefly 20250220000244.png" alt="Customer">
+              </div>
+              <p>"Book Event Ticket made booking tickets so easy! The process was smooth and I got my tickets instantly. Will definitely use again!"</p>
+              <div class="testimonial-author">
+                <h4>Jatin</h4>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-image">
+                <img src="images/Firefly 20250220000244.png" alt="Customer">
+              </div>
+              <p>"I love how easy it is to find events in my area. The filtering options are great and the checkout process is seamless."</p>
+              <div class="testimonial-author">
+                <h4>Verma</h4>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              <div class="testimonial-image">
+                <img src="images/Firefly 20250220000244.png" alt="Customer">
+              </div>
+              <p>"The customer service is outstanding! I had an issue with my booking and they resolved it immediately. Highly recommend!"</p>
+              <div class="testimonial-author">
+                <h4>Demo</h4>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-controls">
+            <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="testimonial-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Clients -->
+    <section class="featured-clients">
+      <div class="container">
+        <h2>Our Featured Clients</h2>
+        <div class="clients-grid">
+          <div class="client">
+            <img src="images/google client.png" alt="Client 1">
+          </div>
+          <div class="client">
+            <img src="images/apple client.png" alt="Client 2" >
+          </div>
+          <div class="client">
+            <img src="images/Meta client.png" alt="Client 3">
+          </div>
+          <div class="client">
+            <img src="images/Zomato client.png" alt="Client 4">
+          </div>
+          <div class="client">
+            <img src="images/Swiggy client.png" alt="Client 5">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot-toggle" id="chatbotToggle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>Book Event Ticket Assistant</h3>
+        <button id="closeChatbot"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot">
+          <p>Hi there! How can I help you with your event booking today?</p>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chatbotInput" placeholder="Type your message...">
+        <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h3>Book Event Ticket</h3>
+          <p>Your one-stop destination for booking event tickets. Find and book tickets for concerts, sports, theater, comedy, and more.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i>Bharat Nagar bhiwani</li>
+            <li><i class="fas fa-phone"></i>9728349291</li>
+            <li><i class="fas fa-envelope"></i>support@Book Event Ticket.com</li>
+          </ul>
+          <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form>
+              <input type="email" placeholder="Your email address">
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Book Event Ticket. All rights reserved.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

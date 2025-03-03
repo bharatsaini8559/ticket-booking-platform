@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Book Event Ticket</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Book Event Ticket</h1>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" id="locationBtn">Location <i class="fas fa-map-marker-alt"></i></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="checkout-section">
+      <div class="container">
+        <h1>Checkout</h1>
+        <div class="checkout-progress">
+          <div class="progress-step active">
+            <div class="step-number">1</div>
+            <div class="step-label">Tickets</div>
+          </div>
+          <div class="progress-line active"></div>
+          <div class="progress-step active">
+            <div class="step-number">2</div>
+            <div class="step-label">Checkout</div>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="step-number">3</div>
+            <div class="step-label">Confirmation</div>
+          </div>
+        </div>
+
+        <div class="checkout-container">
+          <div class="checkout-form">
+            <div class="form-section">
+              <h2>Billing Details</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" required>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" required>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h2>Payment Method</h2>
+              <div class="payment-methods">
+                <div class="payment-method">
+                  <input type="radio" id="credit-card" name="payment-method" checked>
+                  <label for="credit-card">Credit/Debit Card</label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="paypal" name="payment-method">
+                  <label for="paypal">PayPal</label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="apple-pay" name="payment-method">
+                  <label for="apple-pay">Apple Pay</label>
+                </div>
+                <div class="payment-method">
+                  <input type="radio" id="google-pay" name="payment-method">
+                  <label for="google-pay">Google Pay</label>
+                </div>
+              </div>
+
+              <div id="credit-card-details" class="payment-details active">
+                <div class="form-group">
+                  <label for="card-number">Card Number *</label>
+                  <div class="card-input-container">
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    <div class="card-icons">
+                      <i class="fab fa-cc-visa"></i>
+                      <i class="fab fa-cc-mastercard"></i>
+                      <i class="fab fa-cc-amex"></i>
+                      <i class="fab fa-cc-discover"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="expiry-date">Expiry Date *</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV *</label>
+                    <input type="text" id="cvv" placeholder="123" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="card-name">Name on Card *</label>
+                  <input type="text" id="card-name" required>
+                </div>
+              </div>
+
+              <div id="paypal-details" class="payment-details">
+                <p>You will be redirected to PayPal to complete your payment.</p>
+              </div>
+
+              <div id="apple-pay-details" class="payment-details">
+                <p>You will be prompted to complete your payment with Apple Pay.</p>
+              </div>
+
+              <div id="google-pay-details" class="payment-details">
+                <p>You will be prompted to complete your payment with Google Pay.</p>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h2>Discount & Promotions</h2>
+              <div class="promo-code">
+                <input type="text" id="promo-code" placeholder="Enter promo code">
+                <button class="btn-apply">Apply</button>
+              </div>
+              <div class="wallet-balance">
+                <label for="use-wallet">
+                  <input type="checkbox" id="use-wallet">
+                  Use Book Event Ticket Wallet Balance ($0.00)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="event-info">
+              <img src="/placeholder.svg?height=100&width=150" alt="Event">
+              <div class="event-details">
+                <h3>Summer Music Festival</h3>
+                <p><i class="far fa-calendar-alt"></i> June 15, 2023</p>
+                <p><i class="far fa-clock"></i> 7:00 PM</p>
+                <p><i class="fas fa-map-marker-alt"></i> Central Park, New York</p>
+              </div>
+            </div>
+            <div class="ticket-summary">
+              <div class="summary-item">
+                <div class="item-details">
+                  <span class="item-name">General Admission</span>
+                  <span class="item-quantity">x 2</span>
+                </div>
+                <div class="item-price">$98.00</div>
+              </div>
+              <div class="summary-item">
+                <div class="item-details">
+                  <span class="item-name">VIP Experience</span>
+                  <span class="item-quantity">x 1</span>
+                </div>
+                <div class="item-price">$149.00</div>
+              </div>
+            </div>
+            <div class="summary-subtotal">
+              <div class="subtotal-label">Subtotal</div>
+              <div class="subtotal-amount">$247.00</div>
+            </div>
+            <div class="summary-fees">
+              <div class="fee-item">
+                <div class="fee-label">Service Fee</div>
+                <div class="fee-amount">$24.70</div>
+              </div>
+              <div class="fee-item">
+                <div class="fee-label">Processing Fee</div>
+                <div class="fee-amount">$5.00</div>
+              </div>
+            </div>
+            <div class="summary-total">
+              <div class="total-label">Total</div>
+              <div class="total-amount">$276.70</div>
+            </div>
+            <div class="checkout-actions">
+              <button class="btn-primary btn-complete-order">Complete Order</button>
+              <p class="terms-note">By completing your order, you agree to Book Event Ticket's <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot-toggle" id="chatbotToggle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>Book Event Ticket Assistant</h3>
+        <button id="closeChatbot"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot">
+          <p>Hi there! How can I help you with your event booking today?</p>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chatbotInput" placeholder="Type your message...">
+        <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h3>Book Event Ticket</h3>
+          <p>Your one-stop destination for booking event tickets. Find and book tickets for concerts, sports, theater, comedy, and more.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i>Bharat nagar bhiwani</li>
+            <li><i class="fas fa-phone"></i>9728349291</li>
+            <li><i class="fas fa-envelope"></i>support@Book Event Ticket.com</li>
+          </ul>
+          <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form>
+              <input type="email" placeholder="Your email address">
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Book Event Ticket. All rights reserved.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

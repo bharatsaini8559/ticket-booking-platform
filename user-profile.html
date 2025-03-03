@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile - Book Event Ticket</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Book Event Ticket</h1>
+        </a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for events, venues, artists...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" id="locationBtn">Location <i class="fas fa-map-marker-alt"></i></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="user-profile.html" class="btn-login active">My Profile</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="profile-section">
+      <div class="container">
+        <div class="profile-container">
+          <div class="profile-sidebar">
+            <div class="profile-info">
+              <div class="profile-avatar">
+                <img src="/placeholder.svg?height=150&width=150" alt="User Avatar">
+                <button class="edit-avatar"><i class="fas fa-camera"></i></button>
+              </div>
+              <h2>John Doe</h2>
+              <p class="user-email">johndoe@example.com</p>
+              <p class="user-since">Member since: Jan 2022</p>
+              <p class="last-login">Last login: Today, 10:05 AM</p>
+            </div>
+            <div class="profile-nav">
+              <ul>
+                <li class="active"><a href="#profile-details"><i class="fas fa-user"></i> Profile Details</a></li>
+                <li><a href="#ticket-history"><i class="fas fa-ticket-alt"></i> My Tickets</a></li>
+                <li><a href="#payment-history"><i class="fas fa-credit-card"></i> Payment History</a></li>
+                <li><a href="#wallet"><i class="fas fa-wallet"></i> EF Wallet</a></li>
+                <li><a href="#refunds"><i class="fas fa-undo"></i> Refund History</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Account Settings</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="profile-content">
+            <!-- Profile Details Section -->
+            <div class="profile-section-content active" id="profile-details">
+              <div class="section-header">
+                <h2>Profile Details</h2>
+                <button class="btn-edit"><i class="fas fa-edit"></i> Edit Profile</button>
+              </div>
+              <div class="profile-details-content">
+                <div class="details-group">
+                  <h3>Personal Information</h3>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">First Name</span>
+                      <span class="detail-value">John</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Last Name</span>
+                      <span class="detail-value">Doe</span>
+                    </div>
+                  </div>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">Email Address</span>
+                      <span class="detail-value">johndoe@example.com</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Phone Number</span>
+                      <span class="detail-value">+1 (555) 123-4567</span>
+                    </div>
+                  </div>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">Date of Birth</span>
+                      <span class="detail-value">January 15, 1985</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Gender</span>
+                      <span class="detail-value">Male</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="details-group">
+                  <h3>Address Information</h3>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">Street Address</span>
+                      <span class="detail-value">123 Main Street, Apt 4B</span>
+                    </div>
+                  </div>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">City</span>
+                      <span class="detail-value">New York</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">State</span>
+                      <span class="detail-value">NY</span>
+                    </div>
+                  </div>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">Zip Code</span>
+                      <span class="detail-value">10001</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Country</span>
+                      <span class="detail-value">United States</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="details-group">
+                  <h3>Preferences</h3>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">Preferred Categories</span>
+                      <span class="detail-value">
+                        <span class="preference-tag">Music</span>
+                        <span class="preference-tag">Comedy</span>
+                        <span class="preference-tag">Sports</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="details-row">
+                    <div class="detail-item">
+                      <span class="detail-label">Email Notifications</span>
+                      <span class="detail-value">Enabled</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">SMS Notifications</span>
+                      <span class="detail-value">Disabled</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Ticket History Section -->
+            <div class="profile-section-content" id="ticket-history">
+              <div class="section-header">
+                <h2>My Tickets</h2>
+                <div class="filter-dropdown">
+                  <select>
+                    <option value="all">All Tickets</option>
+                    <option value="upcoming">Upcoming Events</option>
+                    <option value="past">Past Events</option>
+                    <option value="canceled">Canceled Events</option>
+                  </select>
+                </div>
+              </div>
+              <div class="tickets-list">
+                <div class="ticket-card upcoming">
+                  <div class="ticket-status">Upcoming</div>
+                  <div class="ticket-event-image">
+                    <img src="/placeholder.svg?height=120&width=200" alt="Event">
+                  </div>
+                  <div class="ticket-details">
+                    <h3>Summer Music Festival</h3>
+                    <p><i class="far fa-calendar-alt"></i> June 15, 2023</p>
+                    <p><i class="far fa-clock"></i> 7:00 PM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Central Park, New York</p>
+                    <div class="ticket-type">
+                      <span class="ticket-label">Ticket Type:</span>
+                      <span class="ticket-value">VIP Experience (x2)</span>
+                    </div>
+                  </div>
+                  <div class="ticket-actions">
+                    <button class="btn-secondary"><i class="fas fa-download"></i> Download</button>
+                    <button class="btn-secondary"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="btn-secondary"><i class="fas fa-qrcode"></i> View QR</button>
+                  </div>
+                </div>
+                
+                <div class="ticket-card upcoming">
+                  <div class="ticket-status">Upcoming</div>
+                  <div class="ticket-event-image">
+                    <img src="/placeholder.svg?height=120&width=200" alt="Event">
+                  </div>
+                  <div class="ticket-details">
+                    <h3>Tech Innovation Summit</h3>
+                    <p><i class="far fa-calendar-alt"></i> July 10, 2023</p>
+                    <p><i class="far fa-clock"></i> 9:00 AM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Convention Center, New York</p>
+                    <div class="ticket-type">
+                      <span class="ticket-label">Ticket Type:</span>
+                      <span class="ticket-value">General Admission (x1)</span>
+                    </div>
+                  </div>
+                  <div class="ticket-actions">
+                    <button class="btn-secondary"><i class="fas fa-download"></i> Download</button>
+                    <button class="btn-secondary"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="btn-secondary"><i class="fas fa-qrcode"></i> View QR</button>
+                  </div>
+                </div>
+                
+                <div class="ticket-card past">
+                  <div class="ticket-status">Past</div>
+                  <div class="ticket-event-image">
+                    <img src="/placeholder.svg?height=120&width=200" alt="Event">
+                  </div>
+                  <div class="ticket-details">
+                    <h3>Broadway Musical Night</h3>
+                    <p><i class="far fa-calendar-alt"></i> May 5, 2023</p>
+                    <p><i class="far fa-clock"></i> 7:30 PM</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Broadway Theater, New York</p>
+                    <div class="ticket-type">
+                      <span class="ticket-label">Ticket Type:</span>
+                      <span class="ticket-value">Orchestra Seats (x2)</span>
+                    </div>
+                  </div>
+                  <div class="ticket-actions">
+                    <button class="btn-secondary"><i class="fas fa-download"></i> Download</button>
+                    <button class="btn-secondary"><i class="fas fa-star"></i> Rate Event</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Payment History Section -->
+            <div class="profile-section-content" id="payment-history">
+              <div class="section-header">
+                <h2>Payment History</h2>
+                <div class="filter-dropdown">
+                  <select>
+                    <option value="all">All Transactions</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="refunded">Refunded</option>
+                  </select>
+                </div>
+              </div>
+              <div class="payment-history-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Transaction ID</th>
+                      <th>Event</th>
+                      <th>Payment Method</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jun 10, 2023</td>
+                      <td>TRX-12345678</td>
+                      <td>Summer Music Festival</td>
+                      <td>Visa •••• 4567</td>
+                      <td>$298.00</td>
+                      <td><span class="status-completed">Completed</span></td>
+                      <td><button class="btn-icon"><i class="fas fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                      <td>Jun 5, 2023</td>
+                      <td>TRX-12345679</td>
+                      <td>Tech Innovation Summit</td>
+                      <td>PayPal</td>
+                      <td>$75.00</td>
+                      <td><span class="status-completed">Completed</span></td>
+                      <td><button class="btn-icon"><i class="fas fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                      <td>May 1, 2023</td>
+                      <td>TRX-12345680</td>
+                      <td>Broadway Musical Night</td>
+                      <td>Mastercard •••• 8901</td>
+                      <td>$150.00</td>
+                      <td><span class="status-completed">Completed</span></td>
+                      <td><button class="btn-icon"><i class="fas fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                      <td>Apr 15, 2023</td>
+                      <td>TRX-12345681</td>
+                      <td>Comedy Night Special</td>
+                      <td>Visa •••• 4567</td>
+                      <td>$70.00</td>
+                      <td><span class="status-refunded">Refunded</span></td>
+                      <td><button class="btn-icon"><i class="fas fa-receipt"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Wallet Section -->
+            <div class="profile-section-content" id="wallet">
+              <div class="section-header">
+                <h2>EF Wallet</h2>
+                <button class="btn-primary"><i class="fas fa-plus"></i> Add Funds</button>
+              </div>
+              <div class="wallet-content">
+                <div class="wallet-balance">
+                  <div class="balance-card">
+                    <h3>Current Balance</h3>
+                    <div class="balance-amount">$125.50</div>
+                    <div class="balance-actions">
+                      <button class="btn-secondary"><i class="fas fa-money-bill-wave"></i> Withdraw</button>
+                      <button class="btn-secondary"><i class="fas fa-gift"></i> Send as Gift</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="wallet-transactions">
+                  <h3>Recent Transactions</h3>
+                  <div class="transaction-list">
+                    <div class="transaction-item">
+                      <div class="transaction-icon credit">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                      <div class="transaction-details">
+                        <div class="transaction-title">Added Funds</div>
+                        <div class="transaction-date">Jun 8, 2023</div>
+                      </div>
+                      <div class="transaction-amount credit">+$100.00</div>
+                    </div>
+                    <div class="transaction-item">
+                      <div class="transaction-icon debit">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="transaction-details">
+                        <div class="transaction-title">Tech Innovation Summit</div>
+                        <div class="transaction-date">Jun 5, 2023</div>
+                      </div>
+                      <div class="transaction-amount debit">-$25.00</div>
+                    </div>
+                    <div class="transaction-item">
+                      <div class="transaction-icon credit">
+                        <i class="fas fa-plus"></i>
+                      </div>
+                      <div class="transaction-details">
+                        <div class="transaction-title">Refund: Comedy Night</div>
+                        <div class="transaction-date">Apr 16, 2023</div>
+                      </div>
+                      <div class="transaction-amount credit">+$70.00</div>
+                    </div>
+                    <div class="transaction-item">
+                      <div class="transaction-icon debit">
+                        <i class="fas fa-minus"></i>
+                      </div>
+                      <div class="transaction-details">
+                        <div class="transaction-title">Broadway Musical Night</div>
+                        <div class="transaction-date">Apr 30, 2023</div>
+                      </div>
+                      <div class="transaction-amount debit">-$19.50</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Refund History Section -->
+            <div class="profile-section-content" id="refunds">
+              <div class="section-header">
+                <h2>Refund History</h2>
+              </div>
+              <div class="refund-history-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Refund ID</th>
+                      <th>Event</th>
+                      <th>Refund Method</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Apr 16, 2023</td>
+                      <td>REF-12345678</td>
+                      <td>Comedy Night Special</td>
+                      <td>EF Wallet</td>
+                      <td>$70.00</td>
+                      <td><span class="status-completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                      <td>Feb 10, 2023</td>
+                      <td>REF-12345679</td>
+                      <td>Jazz Club Night</td>
+                      <td>Original Payment Method</td>
+                      <td>$45.00</td>
+                      <td><span class="status-completed">Completed</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot-toggle" id="chatbotToggle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>Book Event Ticket Assistant</h3>
+        <button id="closeChatbot"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot">
+          <p>Hi there! How can I help you with your event booking today?</p>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chatbotInput" placeholder="Type your message...">
+        <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h3>Book Event Ticket</h3>
+          <p>Your one-stop destination for booking event tickets. Find and book tickets for concerts, sports, theater, comedy, and more.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Bharat nagar bhiwani</li>
+            <li><i class="fas fa-phone"></i>9728349291</li>
+            <li><i class="fas fa-envelope"></i> support@Book Event Ticket.com</li>
+          </ul>
+          <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form>
+              <input type="email" placeholder="Your email address">
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Book Event Ticket. All rights reserved.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+

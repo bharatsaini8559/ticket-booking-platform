@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summer Music Festival - Book Event Ticket</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <h1>Book Event Ticket</h1>
+        </a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for events, venues, artists...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" id="locationBtn">Location <i class="fas fa-map-marker-alt"></i></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" class="btn-login">Login</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="event-details">
+      <div class="container">
+        <div class="event-header">
+          <div class="event-poster">
+            <img src="/placeholder.svg?height=600&width=400" alt="Summer Music Festival">
+            <div class="event-status live">BOOKING LIVE</div>
+          </div>
+          <div class="event-info">
+            <h1>Summer Music Festival</h1>
+            <div class="event-meta">
+              <p><i class="fas fa-map-marker-alt"></i> Central Park, New York</p>
+              <p><i class="far fa-calendar-alt"></i> June 15, 2023</p>
+              <p><i class="far fa-clock"></i> 7:00 PM - 11:00 PM</p>
+              <p><i class="fas fa-user-shield"></i> Age Restriction: 18+</p>
+            </div>
+            <div class="event-share">
+              <span>Share:</span>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-content">
+          <div class="event-description">
+            <h2>Event Description</h2>
+            <p>Join us for the biggest summer music festival of the year! Experience an unforgettable night with top artists from around the world performing live at Central Park.</p>
+            <p>The Summer Music Festival brings together a diverse lineup of musicians spanning multiple genres, from pop and rock to electronic and hip-hop. This year's headliners include internationally acclaimed artists who will deliver electrifying performances on our state-of-the-art main stage.</p>
+            <p>In addition to the amazing music, the festival will feature:</p>
+            <ul>
+              <li>Food vendors offering a variety of cuisines</li>
+              <li>Craft beer and specialty cocktail bars</li>
+              <li>Art installations and interactive experiences</li>
+              <li>Merchandise stands with exclusive festival gear</li>
+            </ul>
+            <p>Don't miss this incredible celebration of music, art, and community in the heart of New York City!</p>
+          </div>
+
+          <div class="ticket-selection">
+            <h2>Select Tickets</h2>
+            <div class="ticket-types">
+              <div class="ticket-type">
+                <div class="ticket-info">
+                  <h3>General Admission</h3>
+                  <p>Access to all general areas and performances</p>
+                  <ul class="ticket-features">
+                    <li><i class="fas fa-check"></i> Main stage access</li>
+                    <li><i class="fas fa-check"></i> Food and beverage areas</li>
+                    <li><i class="fas fa-check"></i> General seating areas</li>
+                  </ul>
+                  <div class="ticket-price">$49.00</div>
+                </div>
+                <div class="ticket-quantity">
+                  <label for="general-qty">Quantity:</label>
+                  <div class="quantity-selector">
+                    <button class="qty-btn minus" data-ticket="general">-</button>
+                    <input type="number" id="general-qty" value="0" min="0" max="10">
+                    <button class="qty-btn plus" data-ticket="general">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ticket-type">
+                <div class="ticket-info">
+                  <h3>VIP Experience</h3>
+                  <p>Premium access with exclusive benefits</p>
+                  <ul class="ticket-features">
+                    <li><i class="fas fa-check"></i> All General Admission benefits</li>
+                    <li><i class="fas fa-check"></i> VIP lounge access</li>
+                    <li><i class="fas fa-check"></i> Premium viewing areas</li>
+                    <li><i class="fas fa-check"></i> Complimentary food & drinks</li>
+                    <li><i class="fas fa-check"></i> Festival merchandise pack</li>
+                  </ul>
+                  <div class="ticket-price">$149.00</div>
+                </div>
+                <div class="ticket-quantity">
+                  <label for="vip-qty">Quantity:</label>
+                  <div class="quantity-selector">
+                    <button class="qty-btn minus" data-ticket="vip">-</button>
+                    <input type="number" id="vip-qty" value="0" min="0" max="10">
+                    <button class="qty-btn plus" data-ticket="vip">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ticket-type">
+                <div class="ticket-info">
+                  <h3>Backstage Pass</h3>
+                  <p>Ultimate festival experience with backstage access</p>
+                  <ul class="ticket-features">
+                    <li><i class="fas fa-check"></i> All VIP Experience benefits</li>
+                    <li><i class="fas fa-check"></i> Backstage access</li>
+                    <li><i class="fas fa-check"></i> Meet & greet with select artists</li>
+                    <li><i class="fas fa-check"></i> Exclusive backstage lounge</li>
+                    <li><i class="fas fa-check"></i> Premium merchandise package</li>
+                    <li><i class="fas fa-check"></i> Priority entry and exit</li>
+                  </ul>
+                  <div class="ticket-price">$299.00</div>
+                </div>
+                <div class="ticket-quantity">
+                  <label for="backstage-qty">Quantity:</label>
+                  <div class="quantity-selector">
+                    <button class="qty-btn minus" data-ticket="backstage">-</button>
+                    <input type="number" id="backstage-qty" value="0" min="0" max="5">
+                    <button class="qty-btn plus" data-ticket="backstage">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="age-declaration">
+              <label for="age-confirm">
+                <input type="checkbox" id="age-confirm">
+                I confirm that all attendees are 18 years of age or older
+              </label>
+            </div>
+
+            <div class="terms-acceptance">
+              <label for="terms-confirm">
+                <input type="checkbox" id="terms-confirm">
+                I have read and agree to the <a href="terms.html">Terms and Conditions</a>
+              </label>
+            </div>
+
+            <div class="ticket-summary">
+              <h3>Order Summary</h3>
+              <div class="summary-items" id="summary-items">
+                <p class="empty-cart">No tickets selected</p>
+              </div>
+              <div class="summary-total">
+                <div class="total-label">Total:</div>
+                <div class="total-amount" id="total-amount">$0.00</div>
+              </div>
+              <button class="btn-primary btn-checkout" id="checkout-btn" disabled>Proceed to Checkout</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-additional-info">
+          <div class="organizer-info">
+            <h2>Event Organizer</h2>
+            <div class="organizer-profile">
+              <img src="/placeholder.svg?height=100&width=100" alt="Organizer">
+              <div class="organizer-details">
+                <h3>NYC Events Productions</h3>
+                <p><i class="fas fa-calendar-check"></i> Organizer since 2015</p>
+                <p><i class="fas fa-phone"></i> (555) 987-6543</p>  Organizer since 2015</p>
+                <p><i class="fas fa-phone"></i> (555) 987-6543</p>
+                <p><i class="fas fa-envelope"></i> info@nycevents.com</p>
+                <a href="organizer-profile.html" class="btn-secondary">View Organizer Profile</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-info">
+            <h2>Venue Information</h2>
+            <div class="venue-details">
+              <div class="venue-map">
+                <img src="/placeholder.svg?height=300&width=500" alt="Venue Map">
+              </div>
+              <div class="venue-text">
+                <h3>Central Park</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Central Park, New York, NY 10022</p>
+                <p><i class="fas fa-info-circle"></i> The event will take place at the Great Lawn area of Central Park.</p>
+                <h4>Getting There</h4>
+                <p><i class="fas fa-subway"></i> <strong>Subway:</strong> 4, 5, 6 to 86th St or B, C to 81st St</p>
+                <p><i class="fas fa-bus"></i> <strong>Bus:</strong> M1, M2, M3, M4 to 5th Ave</p>
+                <p><i class="fas fa-car"></i> <strong>Parking:</strong> Limited street parking available. We recommend using public transportation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chatbot -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot-toggle" id="chatbotToggle">
+      <i class="fas fa-comments"></i>
+    </div>
+    <div class="chatbot-container" id="chatbotContainer">
+      <div class="chatbot-header">
+        <h3>Book Event Ticket Assistant</h3>
+        <button id="closeChatbot"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="message bot">
+          <p>Hi there! How can I help you with your event booking today?</p>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chatbotInput" placeholder="Type your message...">
+        <button id="sendMessage"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-column">
+          <h3>Book Event Ticket</h3>
+          <p>Your one-stop destination for booking event tickets. Find and book tickets for concerts, sports, theater, comedy, and more.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="refund.html">Refund Policy</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i>Bharat Nagar bhiwani, Haryan India 127021</li>
+            <li><i class="fas fa-phone"></i>9728349291</li>
+            <li><i class="fas fa-envelope"></i>support@bookeventticket.com</li>
+          </ul>
+          <div class="newsletter">
+            <h4>Subscribe to our newsletter</h4>
+            <form>
+              <input type="email" placeholder="Your email address">
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Book Event Ticket. All rights reserved.</p>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-apple-pay"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
